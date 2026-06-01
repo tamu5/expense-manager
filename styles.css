@@ -1,0 +1,29 @@
+/* Tailwindで賄えないカスタムスタイルのみ */
+
+/* 左ペインのスクロールバーを細く表示 */
+#expense-list::-webkit-scrollbar {
+  width: 4px;
+}
+#expense-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+#expense-list::-webkit-scrollbar-thumb {
+  background-color: #d1d5db;
+  border-radius: 2px;
+}
+
+/* 選択中カードの左ボーダーを確実に上書き */
+[id^="card-"].selected-card {
+  border-left-width: 4px;
+  border-left-color: #c15f3c;
+}
+
+/* date input のアクセントカラー */
+input[type="date"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+  border-color: #c15f3c;
+  box-shadow: 0 0 0 2px rgba(193, 95, 60, 0.15);
+  outline: none;
+}
