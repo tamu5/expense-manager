@@ -16,7 +16,13 @@
 
       <!-- サマリカード -->
       <div class="p-4 border-b border-gray-200 bg-white shadow-sm">
-        <h1 class="text-lg font-bold text-gray-800 mb-3">経費管理</h1>
+        <div class="flex items-center justify-between mb-3">
+          <h1 class="text-lg font-bold text-gray-800">経費管理</h1>
+          <button
+            id="btn-stats"
+            class="px-3 py-1 rounded-lg text-xs font-medium border border-gray-300 bg-white text-gray-600 hover:bg-gray-50 transition-colors"
+          >集計を見る</button>
+        </div>
         <div class="rounded-lg p-3 text-white mb-2" style="background-color: #c15f3c;">
           <div class="text-xs opacity-80 mb-1">合計金額</div>
           <div id="summary-total" class="text-2xl font-bold">¥0</div>
@@ -180,6 +186,30 @@
     </div>
   </div>
 
-  <script src="app.js"></script>
+  <!-- 集計モーダル -->
+  <div id="modal-stats" class="hidden fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
+    <div class="bg-white rounded-lg shadow-xl p-6 w-full max-w-md mx-4">
+      <div class="flex items-center justify-between mb-5">
+        <h2 class="text-lg font-bold text-gray-800">集計</h2>
+        <button id="btn-close-modal" class="text-gray-400 hover:text-gray-600 text-xl leading-none">✕</button>
+      </div>
+
+      <div class="mb-5">
+        <h3 class="text-sm font-semibold text-gray-600 mb-3 uppercase tracking-wide">カテゴリ別合計</h3>
+        <div id="modal-category-totals" class="space-y-2">
+          <p class="text-sm text-gray-400">読み込み中...</p>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-100 pt-4">
+        <h3 class="text-sm font-semibold text-gray-600 mb-3 uppercase tracking-wide">ステータス別件数</h3>
+        <div id="modal-status-counts" class="space-y-2">
+          <p class="text-sm text-gray-400">読み込み中...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="app.js"></script>
 </body>
 </html>

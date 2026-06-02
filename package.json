@@ -1,0 +1,15 @@
+{
+  "name": "expense-app",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.0"
+  },
+  "devDependencies": {
+    "vite": "^6.3.5"
+  }
+}
